@@ -12,14 +12,11 @@ module.exports = function setupErrorReporting() {
     // eslint-disable-next-line global-require
     Raven = require('raven');
     // Setup error logging
-    Raven.config(
-      'https://e84d90e8ec13450d924ddd1a19581c62:aa9224cf89544c0591bf839112161adf@sentry.io/251839',
-      {
-        autoBreadcrumbs: {
-          http: true,
-        },
+    Raven.config('', {
+      autoBreadcrumbs: {
+        http: true,
       },
-    ).install();
+    }).install();
   }
 
   return Raven;

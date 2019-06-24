@@ -105,7 +105,7 @@ async function updateShaStatus(body, res) {
           state: 'failure',
           description:
             'Something went wrong with PRLint - You can help by opening an issue (click details)',
-          target_url: 'https://github.com/ewolfe/prlint/issues/new',
+          target_url: 'https://github.com/VibrentHealth/prlint/issues/new',
           context: 'PRLint',
         };
       }
@@ -167,7 +167,7 @@ async function updateShaStatus(body, res) {
           description:
             'An error occurred with PRLint. Click details to open an issue',
           context: 'PRLint',
-          target_url: `https://github.com/ewolfe/prlint/issues/new?title=Exception Report&body=${encodeURIComponent(
+          target_url: `https://github.com/VibrentHealth/prlint/issues/new?title=Exception Report&body=${encodeURIComponent(
             exception.toString(),
           )}`,
         },
@@ -265,7 +265,7 @@ module.exports = async (req, res) => {
   } else {
     // Redirect since we don't need anyone visiting our service
     // if they happen to stumble upon our URL
-    res.writeHead(301, { Location: 'https://github.com/ewolfe/prlint' });
+    res.writeHead(301, { Location: 'https://github.com/VibrentHealth/prlint' });
     res.end();
   }
 };
