@@ -11,14 +11,15 @@ COPY ./yarn.lock ./
 RUN yarn install
 
 
-
 FROM node:carbon-alpine as runner
 
 WORKDIR /bot/prlint
 
 COPY --from=builder /bot/prlint/node_modules/ ./node_modules/
 
-COPY . ./
+COPY src src
+
+COPY ./package*.json ./
 
 EXPOSE 3000
 
