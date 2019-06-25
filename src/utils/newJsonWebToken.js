@@ -5,7 +5,7 @@ module.exports = function newJsonWebToken() {
   const payload = {
     iat: Math.floor(Date.now() / 1000),
     exp: Math.floor(Date.now() / 1000) + (10 * 60), // prettier-ignore
-    iss: 7012, // https://github.com/settings/apps/prlint
+    iss: process.env.GH_APP_ID, // https://github.com/settings/apps/
   };
 
   const privateKeyBuffer = Buffer.from(process.env.PRIVATE_KEY_B64, 'base64');
