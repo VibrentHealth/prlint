@@ -62,7 +62,11 @@ async function updateShaStatus(body, res) {
             try {
               const regex = new RegExp(pattern, item.flags || '');
               const pass = regex.test(pullRequestFlattened[element]);
-              if (!pass || !pullRequestFlattened[element]) {
+              if (
+                !pass
+                || (pullRequestFlattened[element] === null
+                  || pullRequestFlattened[element] === undefined)
+              ) {
                 let message = `Rule \`${element}[${index}]\` failed`;
                 message = item.message || message;
                 failureMessages.push(message);
