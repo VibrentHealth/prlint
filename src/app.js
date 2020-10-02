@@ -242,7 +242,7 @@ module.exports = async (req, res) => {
       // so we can read ./.github/prlint.json from their repo
       try {
         const response = await got.post(
-          `${GITHUB_API_URL}/installations/${
+          `${GITHUB_API_URL}/app/installations/${
             body.installation.id
           }/access_tokens`,
           {
